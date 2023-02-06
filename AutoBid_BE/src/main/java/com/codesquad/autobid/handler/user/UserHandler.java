@@ -35,6 +35,7 @@ public class UserHandler {
 
             // Set Header Info
             con.setRequestProperty("Authorization", "Bearer " + access_token);
+            System.out.println("access : " + access_token);
 
             int responseCode = con.getResponseCode();
             BufferedReader br;

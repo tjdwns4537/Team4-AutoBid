@@ -70,7 +70,6 @@ public class User {
 
     public static LocalDate parseDate(String date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
-//        return LocalDate.parse(date, formatter);
         return LocalDate.now();
     }
 
