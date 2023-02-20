@@ -48,7 +48,7 @@
     const $meButton = document.querySelector('.enter-btn-to-me');
     const $roomIdInput = document.querySelector('.room-id');
 
-    const socket = new SockJS('/auction-room');
+    const socket = new SockJS('/ws');
     const client = Stomp.over(socket);
     client.connect({}, () => {});
 
@@ -65,7 +65,7 @@
     $allButton.addEventListener('click', () => {
         const roomId = $roomIdInput.value;
         // publish : 주소, 헤더, 메세지
-        client.publish({ destination: `/ws/enter/all/${roomId}`, body: 'i am entered' });
+        client.publish({ destination: `/ws/enter/${roomId}`, body: 'i am entered' });
         // client.subscribe(`/subscribe/websocket/${roomId}`, message => {
         //     console.log(message);
         // });
